@@ -41,6 +41,7 @@ import java.util.Stack;
 	public void add(NestedInteger ni) ;
 
 	public List<NestedInteger> getList();
+ }
 public class MiniParser {
 	public NestedInteger deserialize(String ss) {
 	      Stack<NestedInteger> stk = new Stack<>();
