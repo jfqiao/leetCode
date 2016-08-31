@@ -15,6 +15,8 @@ Solution solution = new Solution(head);
 
 // getRandom() should return either 1, 2, or 3 randomly. Each element should have equal probability of returning.
 solution.getRandom();
+此问题的注意点：
+需要注意随机数的产生.自己写代码产生随机数，而不是调用库函数获得随机数。有待思考。
 */
 
 /**
