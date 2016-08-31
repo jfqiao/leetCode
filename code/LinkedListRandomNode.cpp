@@ -17,6 +17,8 @@ Solution solution = new Solution(head);
 solution.getRandom();
 此问题的注意点：
 需要注意随机数的产生.自己写代码产生随机数，而不是调用库函数获得随机数。有待思考。
+随机数的数学原理：
+待补充
 */
 
 /**
