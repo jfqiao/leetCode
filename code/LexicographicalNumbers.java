@@ -14,7 +14,7 @@
 	 * 		2.如果ai+1<n&&ai+1不进位(即ai个位不是9）。
 	 * 		3.如果ai个位是9，则需要回退.
 	 * 		回退可能不止一次，例如，199回退到19，个位再次是9，需要继续回退，一直回退到个位不在是9为止。
-	 * 		算法实现就是ai+1/10==ai/10为止。
+	 * 		算法实现就是(ai+1)%10!=9为止。
  */
 
 public class Solution {
@@ -38,7 +38,7 @@ public class Solution {
 		}
 		else{
 			result=i/10;
-			while((result+1)/10!=result/10)result=result/10;
+			while((result+1)%10!=9)result=result/10;
 			result++;
 		}
 		return result;
