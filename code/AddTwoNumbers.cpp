@@ -6,6 +6,30 @@ Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 0 -> 8
 
 思路：从头开始相加接即可，只是要注意考虑进位
+
+更简洁的代码：
+public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+//可以直接加上头结点，返回时去掉即可。
+    ListNode dummyHead = new ListNode(0);
+    ListNode p = l1, q = l2, curr = dummyHead;
+    int carry = 0;
+    while (p != null || q != null) {
+        int x = (p != null) ? p.val : 0;
+        int y = (q != null) ? q.val : 0;
+        int sum = carry + x + y;
+        carry = sum / 10;
+        //用取模比相减好多了。
+        curr.next = new ListNode(sum % 10);
+        curr = curr.next;
+        if (p != null) p = p.next;
+        if (q != null) q = q.next;
+    }
+    if (carry > 0) {
+        curr.next = new ListNode(carry);
+    }
+    //返回时不带上头结点
+    return dummyHead.next;
+}
 */
 
 /**
