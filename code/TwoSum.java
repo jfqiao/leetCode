@@ -10,6 +10,25 @@ Given nums = [2, 7, 11, 15], target = 9,
 Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 */
+/**
+ *一种加快算法：先排序，最优排序O(nlog2(n))
+ * 然后使用有序数组查找相邻元素和大于等于目标，
+ * （1,2,3,4，5,6,7）
+ * 找到第一个大于或等于，在向前移动即可。
+ int [] result=new int [2];
+ int i=0;
+ for(;i<nums.length-1;i++){
+     if(nums[i]+nums[i+1]>=target)break;
+ }
+ result[1]=i+1;
+ for(int j=i;j>0;j--){
+     if(nums[j]+nums[i+1]==targer){
+         result[0]=j;
+         break;
+     }
+ }
+ * 
+ */
 public class Solution {
     public int[] twoSum(int[] nums, int target) {
         int len=nums.length;
