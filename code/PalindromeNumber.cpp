@@ -19,16 +19,18 @@ class Solution {
 public:
     bool isPalindrome(int i) {
        if(i<0)return false;
-		int tmp = i,front=1,rear=10;
-		while (tmp>=10) {
-			tmp = tmp / 10;
-			front*=10;
-		}
-		while(front>=rear){
-			if((i/front)%10!=i%rear/(rear/10))return false;
-			front/=10;
-			rear*=10;
-		}
-		return true;
+	int tmp = i,front=1,rear=10;
+	//找到最高位
+	while (tmp>=10) {
+		tmp = tmp / 10;
+		front*=10;
+	}
+	while(front>=rear){
+		//判断每一位与其对称位置的数。
+		if((i/front)%10!=i%rear/(rear/10))return false;
+		front/=10;
+		rear*=10;
+	}
+	return true;
     }
 };
