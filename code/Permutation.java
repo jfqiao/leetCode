@@ -1,4 +1,4 @@
-package algorithm.leetcode;
+package code;
 
 import org.omg.PortableInterceptor.INACTIVE;
 

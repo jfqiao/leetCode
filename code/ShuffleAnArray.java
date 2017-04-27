@@ -1,3 +1,4 @@
+package code;
 /*
 Problem describe:
 Shuffle a set of numbers without duplicates.
@@ -20,9 +21,9 @@ solution.shuffle();
 
 /**
  * 此题还没有理解清楚，
- * 如果只用一个数组保存原数组，该如何复原？
- * shuffle()这个方法采取随机数，任意交换两个位置的值。
- * 此题应该还有解?待思考。
+ * 如果只用�?个数组保存原数组，该如何复原�?
+ * shuffle()这个方法采取随机数，任意交换两个位置的�?��??
+ * 此题应该还有�??待�?��?��??
  */
 
 public class Solution {

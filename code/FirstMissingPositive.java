@@ -1,4 +1,4 @@
-package algorithm.leetcode;
+package code;
 
 /**
  * Created by hgf on 2017/1/6.

@@ -1,4 +1,4 @@
-package algorithm.leetcode;
+package code;
 
 /**
  * Created by hgf on 2016/12/27.
@@ -37,7 +37,7 @@ public class RorateImage {
     }
 
     public static void rotateInPlace(int[][] matrix) {
-        //从外圈正方形向内旋转，
+        //从外圈正方形向内旋转�?
         int len = matrix.length;
         for (int i = 0; i < len / 2; i++) {
             int curLen = len - 2 * i;

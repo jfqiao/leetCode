@@ -1,3 +1,4 @@
+package code;
 /**
 problem description:
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
@@ -11,10 +12,10 @@ Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 */
 /**
- *一种加快算法：先排序，最优排序O(nlog2(n))
+ *�?种加快算法：先排序，�?优排序O(nlog2(n))
  * 然后使用有序数组查找相邻元素和大于等于目标，
- * （1,2,3,4，5,6,7）
- * 找到第一个大于或等于，在向前移动即可。
+ * �?1,2,3,4�?5,6,7�?
+ * 找到第一个大于或等于，在向前移动即可�?
  int [] result=new int [2];
  int i=0;
  for(;i<nums.length-1;i++){
@@ -27,7 +28,7 @@ return [0, 1].
          break;
      }
  }
- 使用hashtable可以在O(n)解决，但是空间复杂度增加了
+ 使用hashtable可以在O(n)解决，但是空间复杂度增加�?
  
  public int[] twoSum(int[] nums, int target) {
     Map<Integer, Integer> map = new HashMap<>();
@@ -43,7 +44,7 @@ return [0, 1].
     throw new IllegalArgumentException("No two sum solution");
 }
 
-单路：
+单路�?
 public int[] twoSum(int[] nums, int target) {
     Map<Integer, Integer> map = new HashMap<>();
     for (int i = 0; i < nums.length; i++) {

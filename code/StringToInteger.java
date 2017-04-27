@@ -1,3 +1,4 @@
+package code;
 /**
 Implement atoi to convert a string to an integer.
 
@@ -22,16 +23,16 @@ If no valid conversion could be performed, a zero value is returned. If the corr
 */
 
 /**
- *此题的经验：全局考虑的思维还不够，修改了多次才考虑到各种细节之处。
- * 可见细节之处处理不到位。
+ *此题的经验：全局考虑的�?�维还不够，修改了多次才考虑到各种细节之处�??
+ * 可见细节之处处理不到位�??
  * 
 */
-//对于不符合转化的字符串，只取前面有效的部分。
-//对于正负数要注意一下。另外就是如果超过整型的表示范围，就是overflow，
+//对于不符合转化的字符串，只取前面有效的部分�??
+//对于正负数要注意�?下�?�另外就是如果超过整型的表示范围，就是overflow�?
 //根据测试用例可以看出是只取有效的部分
 public class Solution {
     public int myAtoi(String str) {
-     //注意int可以表示的正数与负数范围不一样
+     //注意int可以表示的正数与负数范围不一�?
 		if(str.length()==0)return 0;
 		char [] num=str.trim().toCharArray();
 		int result=0,flag=1;
@@ -49,10 +50,10 @@ public class Solution {
 		}
 		for(int i=1;i<num.length;i++){
 			if(Character.isDigit(num[i])){
-				//根据题目给出的处理方法：向上溢出给出整型最大值
-				//向下溢出给出整型最小值
-				//int 可以表示的正数与负数范围有一点点区别。
-				//负数可以到-2147483648，所以用正数表示负数的绝对值有点小问题。
+				//根据题目给出的处理方法：向上溢出给出整型�?大�??
+				//向下溢出给出整型�?小�??
+				//int 可以表示的正数与负数范围有一点点区别�?
+				//负数可以�?-2147483648，所以用正数表示负数的绝对�?�有点小问题�?
 				int tmp=result;
 //				乘法溢出
 				if(tmp*10/10!=tmp){

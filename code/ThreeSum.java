@@ -1,3 +1,4 @@
+package code;
 /*
 Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0?  
 Find all unique triplets in the array which gives the sum of zero.
@@ -13,7 +14,7 @@ A solution set is:
 ]
 */
 public class ThreeSum {
-   // 先排序对问题有好处。
+   // 先排序对问题有好处�??
 	public List<List<Integer>> threeSum(int[] nums) {
 		List<List<Integer>> result = new ArrayList<>();
 		Arrays.sort(nums);
@@ -53,8 +54,8 @@ public class ThreeSum {
 				}
 			}
 			// if the next number is equal to the current number.
-			//注意用到了start + 1应该是判断 start + 1小于数组长度
-			//否则会造成访问越界。
+			//注意用到了start + 1应该是判�? start + 1小于数组长度
+			//否则会�?�成访问越界�?
 			while (start + 1 < nums.length && nums[start] == nums[start + 1]) {
 				start++;
 			}

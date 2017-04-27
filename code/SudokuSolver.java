@@ -1,11 +1,11 @@
-package algorithm.leetcode;
+package code;
 
 import java.util.Arrays;
 
 /**
- * Sudoku描述：一个9*9的表格，分为9个小的3*3的小方格
- * 满足：每行、每列、每个小方格都是1-9九个数字。
- * 实例如下：
+ * Sudoku描述：一�?9*9的表格，分为9个小�?3*3的小方格
+ * 满足：每行�?�每列�?�每个小方格都是1-9九个数字�?
+ * 实例如下�?
  * 5	1	9     7   4   8    6	3	2
  * 7	8	3	  6   5   2    4	1	9
  * 4	2	6	  1	  3	  9	   8	7	5
@@ -39,9 +39,9 @@ public class SudokuSolver {
     }
 
 
-    //预处理思路：从左往右，从上往下遍历所有的格子，如果该格子已经已经填充，
-    //则移动到下一个格子。每次填充一个数字之后重新回到第一个格子再次遍历。
-    //一直到遍历到最后一个格子则停止,此时要进行预测方格中应该填充得数字。
+    //预处理�?�路：从左往右，从上�?下遍历所有的格子，如果该格子已经已经填充�?
+    //则移动到下一个格子�?�每次填充一个数字之后重新回到第�?个格子再次遍历�??
+    //�?直到遍历到最后一个格子则停止,此时要进行预测方格中应该填充得数字�??
 
     public static void solveSudoku(char[][] board) {
         int count = 0;
@@ -69,9 +69,9 @@ public class SudokuSolver {
      * @param nums 目标放歌
      * @param row 行号
      * @param col 列号
-     * @return 该位置是否插入成功。
-     * 两种情况：1、该位置不需要插入已经存在数字了
-     *          2.该位置不确定插入哪个数字。
+     * @return 该位置是否插入成功�??
+     * 两种情况�?1、该位置不需要插入已经存在数字了
+     *          2.该位置不确定插入哪个数字�?
      */
     public static boolean insert(char[][] nums, int row, int col) {
         if (nums[row][col] != '.')
@@ -153,7 +153,7 @@ public class SudokuSolver {
 //    }
 
     /**
-     * 检验一个方格是否是有效的，
+     * �?验一个方格是否是有效的，
      * @param board target character array
      * @return whether the board is valid. i.e. this board satisfy sudoku condition.
      */
@@ -172,7 +172,7 @@ public class SudokuSolver {
         }
 
 
-        //检测列
+        //�?测列
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 if (Character.isDigit(board[j][i]))
@@ -183,8 +183,8 @@ public class SudokuSolver {
         }
 
 
-        //检测九宫格, i表示第几个九宫格
-        //按从上往下，从左往右的规则，
+        //�?测九宫格, i表示第几个九宫格
+        //按从上往下，从左�?右的规则�?
         for (int i = 0; i < 9; i++) {
             int row = i / 3;
             int col = i % 3;

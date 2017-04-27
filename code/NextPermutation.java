@@ -1,4 +1,4 @@
-package algorithm.leetcode;
+package code;
 
 import algorithm.Util;
 
@@ -31,7 +31,7 @@ public class NextPermutation {
         }
         else {
             int bigMin = nums[i];
-            // 找到比nums[i - 1]大的最小的数
+            // 找到比nums[i - 1]大的�?小的�?
             int pos = i;
             for (int j = i; j < nums.length; j++) {
                 if (nums[j] > nums[i - 1]) {

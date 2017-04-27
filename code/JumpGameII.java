@@ -1,12 +1,12 @@
-package algorithm.leetcode;
+package code;
 
 /**
- * 给定数组nums， 从数组的第一个数开始跳，最远可以跳当前位置的大小
- * 注意可能存在回溯：
+ * 给定数组nums�? 从数组的第一个数�?始跳，最远可以跳当前位置的大�?
+ * 注意可能存在回溯�?
  * 如：
- * 3， 7， 1， 2， 0， 0， 5；
- * 如按贪心算法，每次尽量调最远，则可能需要回溯。
- * （另外，是否可以考虑不用贪心算法，每次跳一步，回溯是不断跳更远。
+ * 3�? 7�? 1�? 2�? 0�? 0�? 5�?
+ * 如按贪心算法，每次尽量调�?远，则可能需要回溯�??
+ * （另外，是否可以考虑不用贪心算法，每次跳�?步，回溯是不断跳更远�?
  * 貌似复杂度更大）
  * Created by hgf on 2017/1/7.
  */
@@ -38,27 +38,27 @@ public class JumpGameII {
 
     //当前位置nums[curPos] != 0
     private boolean isJump(int[] nums, int[] preSteps, int[] curSteps, int curPos, boolean forward) {
-        //从前往后跳
+        //从前�?后跳
         if (forward) {
-            //计算下一个跳跃位置
+            //计算下一个跳跃位�?
             int nextPos = curPos + nums[curPos];
             //如果已经越过数组末尾
             if (nextPos >= nums.length - 1)
                 return true;
-                //如果下一个跳跃位置值为0，则需要回溯
+                //如果下一个跳跃位置�?�为0，则�?要回�?
             else if (nums[nextPos] == 0) {
                 //找到上一个跳跃位置并回溯
                 nextPos = curPos - preSteps[curPos];
                 return isJump(nums, preSteps, curSteps, nextPos, false);
             }
-            //下一个跳跃位置值不为0，按贪心算法跳跃最大距离
+            //下一个跳跃位置�?�不�?0，按贪心算法跳跃�?大距�?
             preSteps[nextPos] = nums[curPos];
             curSteps[curPos] = nums[curPos];
             return isJump(nums, preSteps, curSteps, nextPos, forward);
         }
         //从后返回
         else {
-            //当前位置调了一步导致回溯，则继续回溯。
+            //当前位置调了�?步导致回溯，则继续回溯�??
             int nextPos;
             if (curSteps[curPos] == 1) {
                 if (curPos == 0)
@@ -66,14 +66,14 @@ public class JumpGameII {
                 nextPos = curPos - preSteps[curPos];
                 return isJump(nums, preSteps, curSteps, nextPos, forward);
             }
-            //当前位置跳跃了不止一步，则减少一步继续向前跳跃。
+            //当前位置跳跃了不止一步，则减少一步继续向前跳跃�??
             nextPos = curPos + --curSteps[curPos];
             preSteps[nextPos] = curSteps[curPos];
             return isJump(nums, preSteps, curSteps, nextPos, true);
         }
     }
 
-    //从前向后跳
+    //从前向后�?
     private int jump(int[] nums) {
         if (nums.length == 1)
             return 0;
@@ -89,9 +89,9 @@ public class JumpGameII {
         int nextPos;
         outter:
         while (true) {
-            //从前往后跳
+            //从前�?后跳
             if (forward) {
-                //如果当前跳跃位置为0， 则立刻回溯
+                //如果当前跳跃位置�?0�? 则立刻回�?
                 if (nums[curPos] == 0) {
                     nextPos = curPos - preSteps[curPos];
                     curPos = nextPos;
@@ -100,7 +100,7 @@ public class JumpGameII {
                     continue;
                 }
                 nextPos = curPos + nums[curPos];
-//                //计算下一个跳跃位置,从最大开始试
+//                //计算下一个跳跃位�?,从最大开始试
 //                if (curSteps[curPos] == 0)
 //                    nextPos = curPos + nums[curPos];
                 //如果已经越过数组末尾
@@ -128,7 +128,7 @@ public class JumpGameII {
                 curSteps[curPos] = step;
                 preSteps[nextPos] = step;
                 result++;
-                //如果下一个跳跃位置值为0，则减少一步再跳一直到跳了一步还是0则回溯
+                //如果下一个跳跃位置�?�为0，则减少�?步再跳一直到跳了�?步还�?0则回�?
 //                if (nums[nextPos] == 0) {
 //                    //找到上一个跳跃位置并回溯
 //                    if (curSteps[curPos] == 1) {
@@ -141,7 +141,7 @@ public class JumpGameII {
 ////                    return isJump(nums, preSteps, curSteps, nextPos, false);
 //                }
 //                else {
-//                    //下一个跳跃位置值不为0，按贪心算法跳跃最大距离
+//                    //下一个跳跃位置�?�不�?0，按贪心算法跳跃�?大距�?
 //                    preSteps[nextPos] = nums[curPos];
 //                    curSteps[curPos] = nums[curPos];
 //                }
@@ -149,7 +149,7 @@ public class JumpGameII {
             }
             //从后返回
             else {
-                //当前位置调了一步导致回溯，则继续回溯。
+                //当前位置调了�?步导致回溯，则继续回溯�??
                 if (curSteps[curPos] == 1) {
 //                    if (curPos == 0)
 //                        return false;
@@ -157,7 +157,7 @@ public class JumpGameII {
                     result--;
 //                    return isJump(nums, preSteps, curSteps, nextPos, forward);
                 }
-                //当前位置跳跃了不止一步，则减少一步继续向前跳跃,此处也要试调一直到向前跳不为0。
+                //当前位置跳跃了不止一步，则减少一步继续向前跳�?,此处也要试调�?直到向前跳不�?0�?
                 else {
                     nextPos = curPos + --curSteps[curPos];
                     preSteps[nextPos] = curSteps[curPos];
@@ -177,11 +177,11 @@ public class JumpGameII {
         int zerosPosEnd = zeroPosStart;
         while (zerosPosEnd < nums.length - 1 && nums[zerosPosEnd + 1] == 0)
             zerosPosEnd++;
-        //找到可以跳过的最近的距离。
+        //找到可以跳过的最近的距离�?
         int backStart = start;
         int maxStep = Integer.MIN_VALUE;
         while (start < zeroPosStart) {
-            //跳跃最远不是零的位置并且跨过zeroPosEnd.
+            //跳跃�?远不是零的位置并且跨过zeroPosEnd.
             int tmp = nums[start] + start;
             if (tmp >= nums.length - 1)
                 return true;

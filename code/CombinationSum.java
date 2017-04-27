@@ -1,4 +1,4 @@
-package algorithm.leetcode;
+package code;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,7 +41,7 @@ public class CombinationSum {
 
     public void combinationSumRecursive(List<Integer> cur, int target, int from) {
         if (target == 0) {
-            //使用tmp重新new一个list，因为ans中添加的是引用。
+            //浣跨敤tmp閲嶆柊new涓�涓猯ist锛屽洜涓篴ns涓坊鍔犵殑鏄紩鐢ㄣ��?
             List<Integer> tmp = new ArrayList<>(cur);
             ans.add(tmp);
         } else {
@@ -78,10 +78,10 @@ public class CombinationSum {
     }
 
     /**
-     * 每个数字只能用一次，并且所有的的可能值不能相同。
-     * @param target 目前的目标值
-     * @param from  当前位置
-     * @return 结果
+     * 姣忎釜鏁板瓧鍙兘鐢ㄤ竴娆★紝骞朵笖鎵�鏈夌殑鐨勫彲鑳藉�间笉鑳界浉鍚屻��
+     * @param target 鐩墠鐨勭洰鏍囧��
+     * @param from  褰撳墠浣嶇疆
+     * @return 缁撴�?
      */
     public List<List<Integer>> backInOnce(int target, int from) {
         if (target == 0) {

@@ -1,3 +1,4 @@
+package code;
 /*
 Given a set of non-overlapping intervals, insert a new interval into the intervals (merge if necessary).
 
@@ -13,6 +14,8 @@ This is because the new interval [4,9] overlaps with [3,5],[6,7],[8,10].
 
 */
 
+import java.util.List;
+
 /**
  * Definition for an interval.
  * public class Interval {
@@ -22,8 +25,8 @@ This is because the new interval [4,9] overlaps with [3,5],[6,7],[8,10].
  *     Interval(int s, int e) { start = s; end = e; }
  * }
  */
- // 优化：推测可以用二分法搜索，快速插入。
-public class Solution {
+ // 优化：推测可以用二分法搜索，快�?�插入�??
+public class InsertInterval {
     public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
         for (int i = 0; i < intervals.size(); i++) {
             Interval current = intervals.get(i);

@@ -1,4 +1,4 @@
-package algorithm.leetcode;
+package code;
 
 /**
  * Created by hgf on 2017/1/6.
@@ -37,12 +37,12 @@ public class TrappingRainWater {
     }
 
     /**
-     * 找出数组中特定下标序列中国的最大值。
+     * 找出数组中特定下标序列中国的�?大�?��??
      *
      * @param heights 目标数组
-     * @param start   开始下标（包含）
-     * @param end     结束下标（不包含）
-     * @return 最大值所在的位置。
+     * @param start   �?始下标（包含�?
+     * @param end     结束下标（不包含�?
+     * @return �?大�?�所在的位置�?
      */
     private int findMax(int[] heights, int start, int end) {
         if (start == end) {
@@ -62,7 +62,7 @@ public class TrappingRainWater {
         return pos;
     }
 
-    //规定start位置的高度较大，end位置的高度较小
+    //规定start位置的高度较大，end位置的高度较�?
     private int getRainVolumn(int[] heights, int start, int end) {
         if (start == end)
             return 0;

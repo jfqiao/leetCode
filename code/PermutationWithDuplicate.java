@@ -1,11 +1,11 @@
-package algorithm.leetcode;
+package code;
 
 import java.util.*;
 
 /**
  * Created by hgf on 2016/12/28.
- * 有重复数字的数组版本： 在Permutation中已经改良了，可以处理有重复的。
- * 本类中的改良方法不佳。
+ * 有重复数字的数组版本�? 在Permutation中已经改良了，可以处理有重复的�??
+ * 本类中的改良方法不佳�?
  */
 public class PermutationWithDuplicate {
     public static void main(String[] args) {

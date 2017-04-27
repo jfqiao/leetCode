@@ -1,4 +1,4 @@
-package algorithm.leetcode;
+package code;
 
 /**
  * '*' matches a sequence (include the empty sequence)
@@ -12,7 +12,7 @@ public class WildcardMatching {
         System.out.println(wm.isMatch("mississippi", "m*issip*"));
     }
 
-    //默认 '*' 匹配空串，出现不匹配则回退 '*' 匹配一次，如此往复进行
+    //默认 '*' 匹配空串，出现不匹配则回�? '*' 匹配�?次，如此�?复进�?
     public boolean isMatch(String s, String p) {
         return isMatch(s.toCharArray(), 0, p.toCharArray(), 0);
     }
@@ -21,7 +21,7 @@ public class WildcardMatching {
         if (sPos == s.length && pPos == p.length)
             return true;
         else if (sPos == s.length) {
-            //目标串匹配完毕，如果pattern剩下的全都是'*'， 则匹配成功，否则失败
+            //目标串匹配完毕，如果pattern剩下的全都是'*'�? 则匹配成功，否则失败
             while (pPos < p.length) {
                 if (p[pPos] != '*')
                     return false;
@@ -35,7 +35,7 @@ public class WildcardMatching {
             else if (p[pPos] == '?' || s[sPos] == p[pPos])
                 return isMatch(s, sPos + 1, p, pPos + 1);
         }
-        //匹配错误，开始回溯。
+        //匹配错误，开始回溯�??
         int tmp = --pPos;
         while (pPos > -1) {
             if (p[pPos] == '*')

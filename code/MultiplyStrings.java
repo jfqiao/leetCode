@@ -1,4 +1,4 @@
-package algorithm.leetcode;
+package code;
 
 /**
  * Created by hgf on 2017/1/6.
@@ -27,7 +27,7 @@ public class MultiplyStrings {
             intNum1 = intNum2;
             intNum2 = tmpArr;
         }
-        //注意，用intNum2的每一个数去乘以intNum1
+        //注意，用intNum2的每�?个数去乘以intNum1
         int[][] tmpResult = new int[9][len1 + 1];
         int[] result = new int[len1 + len2];
         boolean[] isCaculated = new boolean[9];
@@ -51,7 +51,7 @@ public class MultiplyStrings {
         return sb.toString();
     }
 
-    //数组表示数字时，数字的高位在数组的下标较大的位置。
+    //数组表示数字时，数字的高位在数组的下标较大的位置�?
     private void add(int[] result, int [] tmpResult, int offset) {
         int carryBit = 0;
         for (int i = 0; i < tmpResult.length; i++) {
@@ -67,7 +67,7 @@ public class MultiplyStrings {
             j++;
         }
     }
-    // 一个数乘以数组中的每个数。nums中，高位数字在下标大的位置。
+    // �?个数乘以数组中的每个数�?�nums中，高位数字在下标大的位置�??
     private void multiply(int[] nums, int mul, int[] result) {
         int carryBit = 0;
         int tmp = 0;

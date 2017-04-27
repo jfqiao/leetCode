@@ -1,12 +1,12 @@
-package algorithm.leetcode;
+package code;
 
 import java.util.List;
 
 /**
  * Created by hgf on 2016/12/23
- * 八皇后问题：在一个8*8的棋盘上，放置八个皇后，使得
- * 任意两个皇后都不在同一行，同一列，或者同一条斜线上
- * 问：一共有多少种放法？
+ * 八皇后问题：在一�?8*8的棋盘上，放置八个皇后，使得
+ * 任意两个皇后都不在同�?行，同一列，或�?�同�?条斜线上
+ * 问：�?共有多少种放法？
  */
 public class EightQueenProblem {
 

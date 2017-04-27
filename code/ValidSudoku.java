@@ -1,3 +1,4 @@
+package code;
 /*
 Problem discripition:
 In a 9*9 matrix, for each horizontal line, it contains 1-9,the nine numbers,
@@ -7,7 +8,7 @@ and for each 3*3 rectangle, (total 9), it also contains nine numbers without rep
 For a given 9 * 9 matrix, validate if it is a valid sudoku. 
 A valid Sudoku board (partially filled) is not necessarily solvable. Only the filled cells need to be validated.
 */
-//检测可行性问题比较复杂。 可能是NP完全问题。
+//�?测可行�?�问题比较复杂�?? 可能是NP完全问题�?
 public class Solution {
     public boolean isValidSudoku(char[][] board) {
         int [] tags = new int [9];
@@ -27,7 +28,7 @@ public class Solution {
         }
         
         
-        //检测行    
+        //�?测行    
         for (int i = 0; i < 9; i++)
         {
             for (int j = 0; j < 9; j++)
@@ -40,8 +41,8 @@ public class Solution {
         }
         
             
-        //检测九宫格, i表示第几个九宫格
-        //按从上往下，从左往右的规则，
+        //�?测九宫格, i表示第几个九宫格
+        //按从上往下，从左�?右的规则�?
         for (int i = 0; i < 9; i++)
         {
             int row = i / 3;

@@ -1,4 +1,4 @@
-package algorithm.leetcode;
+package code;
 
 import algorithm.Util;
 import algorithm.sort.QuickSort;
