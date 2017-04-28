@@ -3,11 +3,7 @@ package algorithm;
 public class UglyNumber {
 	public static void main(String[] args) {
 		UglyNumber un = new UglyNumber();
-//		long t1 = System.currentTimeMillis();
-//		System.out.println(un.getNthUglyNumber(1000));
-//		long t2 = System.currentTimeMillis();
 		System.out.println(un.getNthUglyNumberWithPointer(20));
-//		long t3 = System.currentTimeMillis();
 	}
 	
 	public int getNthUglyNumber(int n) {
@@ -34,7 +30,7 @@ public class UglyNumber {
 		uglys[0] = 1;
 	    int i = 0, j = 0, k = 0;
 	    for (int index = 1; index < n; index++) {
-	    	System.out.println(String.format("i = %d, j = %d, k = %d", i, j, k));
+//	    	System.out.println(String.format("i = %d, j = %d, k = %d", i, j, k));
 	        uglys[index] = Math.min(Math.min(uglys[i] * 2, uglys[j] * 3), uglys[k] * 5);
 	        if (uglys[index] / uglys[i] == 2)
 	            i++;

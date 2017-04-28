@@ -23,10 +23,10 @@ public class Subset {
 			result.add(new ArrayList<Integer>(list));
 			return;
 		}
-		//当前位置有该元素
+		//the element is in.
 		list.add(nums[pos]);
 		subsetRecursive(nums, pos + 1, list);
-		//当前位置没有该元素
+		//the element is off.
 		list.remove(new Integer(nums[pos]));
 		subsetRecursive(nums, pos + 1, list);
 	}
