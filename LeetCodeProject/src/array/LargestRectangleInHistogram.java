@@ -8,8 +8,6 @@ public class LargestRectangleInHistogram {
 	}
 	
 	public int largestRectangelArea(int[] nums) {
-		//从头向后找，找到第一个比自己小的数，则计算该值得面积。
-		//然后继续向后，高度换位较小的数的高度。
 		int[] area = new int[nums.length];
 		for (int i = 0; i < area.length; i++) {
 			area[i] = -1;
