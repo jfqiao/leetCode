@@ -7,27 +7,7 @@ public class RemoveDuplicatesFromSortedListII {
 		head = rdfsl.deleteDuplicates(null);
 		ListNode.output(head);
 	}
-<<<<<<< HEAD
 	
-	 public ListNode deleteDuplicates(ListNode head) {
-		 ListNode p = head;
-		 ListNode q = null;
-		 while (p != null) {
-			 q = p.next;
-			 if (q != null && p.val != q.val)
-				 break;
-			 while (q != null && p.val == q.val)
-				 q = q.next;
-			 p = q;
-		 }
-		 
-		 return head;
-		
-	 }
-}
-=======
->>>>>>> 1ec27b4386c048c82db9b9d2f7e92671cd0ec826
-
 	public ListNode deleteDuplicates(ListNode head) {
 		// 为head添加一个开头，使得所有的判断从p后面开始。
 		ListNode p = new ListNode(0);
