@@ -24,12 +24,13 @@ public class SubstringWithConcatenationOfAllWords {
 	public static void main(String[] args) {
 		SubstringWithConcatenationOfAllWords sw = new SubstringWithConcatenationOfAllWords();
 		String[] words = {"a", "a", "a", "a"};
-		String str = "";
+		String str = "aaaaaaaaaaaaaaaaaaa";
 		System.out.println(sw.findSubstring(str, words));
 
 	}
 	
 	//注意，按照题目意思，words中所有的单词长度都相同。
+	//此算法已经实现了，但是对于运行时间不够优化，导致在leetcode中TLE.
     public List<Integer> findSubstring(String s, String[] words) {
     	List<Integer> list = new ArrayList<Integer>();
     	int wordLen = words[0].length();
@@ -45,7 +46,7 @@ public class SubstringWithConcatenationOfAllWords {
         		count.increment();
         }
         int curPos = 0, visitPos;
-        while (curPos < chs.length) {
+        while (curPos <= chs.length - totalLen) {
         	visitPos = curPos;
         	while (visitPos + wordLen <= chs.length) {
         		String str = s.substring(visitPos, visitPos + wordLen);
