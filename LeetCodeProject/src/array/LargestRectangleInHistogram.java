@@ -76,6 +76,9 @@ public class LargestRectangleInHistogram {
 
 	// 算法AC了。 
 	public int largestRectangelAreaWithStack(int[] heights) {
+		//idea：从做往右扫描，如果栈不空，则将当前访问元素与栈顶元素比较，
+		//如果栈顶元素较大，则可以计算以栈顶元素为高的长方形面积。
+		//弹出栈顶元素继续比较，否则将当前元素压入栈中。
 		Stack<Position> stack = new Stack<Position>();
 		int area = 0;
 		int tmpResult = 0;
@@ -90,6 +93,9 @@ public class LargestRectangleInHistogram {
 			}
 			stack.push(new Position(i, leftPos));
 		}
+		
+		//经过一次扫描后，栈中剩余的元素按照从小到大排列
+		//如此只需要从栈顶开始弹出元素计算面积即可。
 		Position margin = null;
 		if (!stack.empty()) {
 			margin = stack.peek();
@@ -107,12 +113,18 @@ public class LargestRectangleInHistogram {
 		}
 		return area;
 	}
+	
+	//通过观察别人的算法，可以不利用栈，并且算法更简洁。
+	public int largestRectangelArea2(int[] heights) {
+		
+		return 0;
+	}
 }
 
 class Position {
 	int leftPos;
 	int pos;
-
+	
 	public Position(int pos, int leftPos) {
 		this.pos = pos;
 		this.leftPos = leftPos;
