@@ -44,16 +44,8 @@ public class ScrambleString {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ScrambleString ss = new ScrambleString();
-		System.out.println(ss.scrambelNumber("abcde"));
 	}
 	
-	// 动态规划思想：将原问题分解为子问题。
-	//原字符串的长度为 n, 可以将字符串分为 i, j 两段， 1 <= i, j <= n - 1
-	//这两段形成自己的混合字符串，分两种情况组合：
-	// 1. 交换位置组合
-	// 2. 不交换位置组合
-	//组合得到的结果与s2比较即可。（消耗内存比较大）。	
 	public boolean isScramble(String s1, String s2) {
 		
 		return false;
