@@ -13,25 +13,38 @@ package array;
  * @author jfq
  *
  */
+
 public class FindTheDuplicateNumber {
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		FindTheDuplicateNumber fd = new FindTheDuplicateNumber();
+		int[] nums = {1, 3, 4, 2, 1, 5, 6};
+		System.out.println(fd.findDuplicate(nums));
 	}
-
+	
 	public int findDuplicate(int[] nums) {
-		int slow = 0, fast = 0;
 		int count = 0;
+		int fast = nums[0];
+		int slow = nums[0];
 		while (true) {
 			fast = nums[nums[fast]];
 			slow = nums[slow];
+			count++;
 			if (fast == slow)
 				break;
-			else 
-				count++;
 		}
-		return 0;
+		fast = nums[0];
+		slow = fast;
+		for (int i = 0; i < count; i++) {
+			fast = nums[fast];
+		}
+		while (true) {
+			if (slow == fast)
+				break;
+			else {
+				fast = nums[fast];
+				slow = nums[slow];
+			}
+		}
+		return slow;
 	}
-
 }
