@@ -35,13 +35,4 @@ public class BinaryTreePostorderTraversal {
 			postorderRecursive(root.right);
 		result.add(root.val);
 	}
-	
-	public void postoederIterative(TreeNode root) {
-		Stack<TreeNode> stack = new Stack<TreeNode>();
-		stack.push(root);
-		TreeNode node;
-		while (!stack.empty()) {
-			
-		}
-	}
 }
