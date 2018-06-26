@@ -23,36 +23,66 @@ package linkedlist;
  */
 
 public class IntersectionOfTwoLinkedLists {
-    public static void main(String[] args) {
-
-    }
 
     /*
         idea:  将链表A的尾节点指向链表B的头节点，找新的链表是否有环即可。没有环则两个链表不相交，
         有环则表示两个链表相交，找到环开始的第一个节点就是相交的第一个节点。（问题转化了）。
      */
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        int lenA = 0, lenB = 0;
-        if (headA == null || headB == null) {
-            return null;
+        if (headA == null || headB == null)
+        		return null;
+        int lenA = 0;
+        int lenB = 0;
+        ListNode tmp = headA;
+        while (tmp != null) {
+        		lenA++;
+        		tmp = tmp.next;
         }
-        ListNode lastA = headA;
-        while (lastA != null && lastA.next != null) {
-            lenA++;
-            lastA = lastA.next;
+        tmp = headB;
+        while (tmp != null) {
+        		lenB++;
+        		tmp = tmp.next;
         }
-        lastA.next = headB;
-        ListNode fast = headA, slow = headA;
-        while (fast != null && fast.next != null) {
-            if (fast == slow) {
-
-            }
-            fast = fast.next.next;
-            if (fast == null) // if there is no ring in the new linked list
-                return null;
-            slow = slow.next;
+        if (lenA > lenB) {
+        		return getIntersectionNode(headA, headB, lenA - lenB, lenB);
+        } else {
+        		return getIntersectionNode(headB, headA, lenB - lenA, lenA);
         }
-
-        return null;
+    }
+    
+    public ListNode getIntersectionNode(ListNode longHead, ListNode shortHead, int lenGap, int len) {
+    		while (lenGap > 0) {
+    			longHead = longHead.next;
+    			lenGap--;
+    		}
+    		while (len > 0) {
+    			if (longHead == shortHead)
+    				return longHead;
+    			len--;
+    			longHead = longHead.next;
+    			shortHead = shortHead.next;
+    		}
+    		return null;
+    }
+    
+    public static void main(String[] args) {
+    		ListNode node1 = new ListNode(3);
+    		ListNode node2 = new ListNode(1);
+    		ListNode node3 = new ListNode(5);
+    		ListNode node4 = new ListNode(2);
+    		ListNode node5 = new ListNode(4);
+    		ListNode node6 = new ListNode(6);
+    		ListNode node7 = new ListNode(4);
+    		ListNode node8 = new ListNode(7);
+    		node1.next = node2;
+    		node2.next = node3;
+    		node3.next = node4;
+    		node4.next = node5;
+    		node6.next = node7;
+    		node7.next = node8;
+    		node8.next = node3;
+    		ListNode ins = new IntersectionOfTwoLinkedLists().getIntersectionNode(node1, node6);
+    		System.out.println(ins);
+    		System.out.println(node3);
     }
 }
